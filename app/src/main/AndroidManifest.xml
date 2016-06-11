@@ -18,9 +18,9 @@
 
     <!-- new permissions -->
 
-    <permission
-        android:name="we.dev.mapssample.permission.MAPS_RECEIVE"
-        android:protectionLevel="signature" />
+    <!--<permission-->
+        <!--android:name="we.dev.mapssample.permission.MAPS_RECEIVE"-->
+        <!--android:protectionLevel="signature" />-->
 
     <uses-permission android:name="we.dev.mapssample.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -47,6 +47,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name="model.camera.ImageTargets"
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
         <activity android:name=".GPSActivity" android:screenOrientation="landscape" />
 
         <!--
