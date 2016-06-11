@@ -122,7 +122,7 @@ public class GPSActivity extends AugmentedReality {
         dialog = new Dialog(this);//for show information about place
         dialog.setContentView(R.layout.activity_maps);
         dialog.setTitle("Dstination");
-        dialog.getWindow().setLayout(700,700);
+        dialog.getWindow().setLayout(900,700);
 
 
 //        to set name inside it
