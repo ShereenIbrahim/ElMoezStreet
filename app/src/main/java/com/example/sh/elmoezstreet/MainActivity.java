@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,7 @@ import fragments.GPSFragment;
 import fragments.HomeFragment;
 import fragments.ProfileFargment;
 import fragments.StoryFragment;
+import model.camera.ShowInformationFragment;
 
 public class MainActivity extends AppCompatActivity {
     TabLayout tabs;
@@ -39,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.e("ayad","test");
-        Log.e("shereeeeeeeeeeen", "test");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
