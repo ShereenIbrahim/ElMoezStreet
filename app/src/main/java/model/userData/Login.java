@@ -25,12 +25,16 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import http_utilities.HttpHandler;
 import http_utilities.MySingletonVolley;
+import sessionManagement.SessionManager;
 
 
 public class Login extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
     private ProgressDialog progressDialog;
+    private SessionManager session;
+    private String email;
+    private String password;
 
     @InjectView(R.id.input_email) EditText _emailText;
     @InjectView(R.id.input_password) EditText _passwordText;
@@ -43,6 +47,11 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.inject(this);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
+        //declare session for logined user
+        // Session Manager
+        session = new SessionManager(getApplicationContext());
+        Toast.makeText(getApplicationContext(), "User Login Status: " + session.isLoggedIn(), Toast.LENGTH_LONG).show();
 
         // Login Button
 
@@ -83,8 +92,8 @@ public class Login extends AppCompatActivity {
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
-        final String email = _emailText.getText().toString();
-        final String password = _passwordText.getText().toString();
+        email = _emailText.getText().toString();
+        password = _passwordText.getText().toString();
 
         // TODO: Implement your own authentication logic here.
 
@@ -166,6 +175,10 @@ public class Login extends AppCompatActivity {
                             if(response.getString("state").equals("register Successfully")){
                                 progressDialog.dismiss();
                                 onLoginSuccess(response.getString("state"));
+                                // Creating user login session
+                                // For testing i am stroing name, email as follow
+                                // Use user real data
+                                session.createLoginSession(response.getString("userName"),email);
 
 
                             }else {
