@@ -55,6 +55,7 @@
             android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
+
         <activity android:name=".GPSActivity" android:screenOrientation="landscape" />
 
         <!--
