@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.sh.elmoezstreet.R;
 
@@ -21,19 +22,30 @@ public class GameActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         Bundle extras = getIntent().getExtras();
-
         activityName=extras.getString("activity_name");
-        if(activityName.equals("Al-Hakim bi-Amr Allah Mosque")){
 
-            setContentView(R.layout.game_play_activity);
+        ImageView image=(ImageView)findViewById(R.id.TitleImage);
+        if(activityName.equals("Al-Hakim")){
+
+            setContentView(R.layout.alhakim_play);
+
+//            image.setImageBitmap(R.drawable.alhakim_p);
 
         }
-       else if(activityName.equals("Aqmar Mosque")){
+       else if(activityName.equals("Barquq")){
 
-            setContentView(R.layout.game_play_activity);
+            setContentView(R.layout.barqoq_play);
+
+//            image.setImageBitmap(R.drawable.barkok_p);
 
         }
+        else if(activityName.equals("Qalawoun")){
 
+            setContentView(R.layout.qalwoun_play);
+
+//            image.setImageBitmap(R.drawable.qalwoun_p);
+
+        }
 
         Button play=(Button) findViewById(R.id.PlayButton);
         play.setOnClickListener(new OnClickListener() {
@@ -41,6 +53,8 @@ public class GameActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Game.class);
+                intent.putExtra("activity_name",activityName);
+
                 startActivity(intent);
             }
         });
@@ -51,7 +65,6 @@ public class GameActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), WinGame.class);
                 intent.putExtra("activity_name",activityName);
-
                 startActivity(intent);
 
             }

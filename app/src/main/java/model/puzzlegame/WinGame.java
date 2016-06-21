@@ -24,16 +24,24 @@ String activityName="";
         activityName=extras.getString("activity_name");
 
 
-if(activityName.equals("Al-Hakim bi-Amr Allah Mosque")){
-    setContentView(R.layout.alhakim_info);
+        if(activityName.equals("Al-Hakim")){
+
+            setContentView(R.layout.alhakim_info);
 
 
-}
-else if(activityName.equals("Aqmar Mosque")) {
-    setContentView(R.layout.aqmar_info);
+        }
+        else if(activityName.equals("Barquq")){
 
-}
+            setContentView(R.layout.barqoq_info);
 
+
+        }
+        else if(activityName.equals("Qalawoun")){
+
+            setContentView(R.layout.qalwoun_info);
+
+
+        }
 
 
         viewFlipper = (ViewFlipper) this.findViewById(R.id.bckgrndViewFlipper1);

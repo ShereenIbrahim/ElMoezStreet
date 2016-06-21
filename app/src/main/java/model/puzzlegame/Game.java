@@ -20,10 +20,12 @@ public class Game extends Activity {
 
 
 	int first=50;
+	String activityName="";
 	int second=255;
 	int last=460;
-	private TextView moveCounter;
- 	private TextView feedbackText;
+//	private TextView moveCounter;
+// 	private TextView feedbackText;
+	Button skip;
  	private Button[] buttons;
     private Boolean bad_move=false;
    	private static final Integer[] goal = new Integer[] {0,1,2,3,4,5,6,7,8};
@@ -31,9 +33,46 @@ public class Game extends Activity {
 	private ArrayList<Integer> cells = new ArrayList<Integer>();
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.my_game_activity);
-        buttons=findButtons();
+
+
+		super.onCreate(savedInstanceState);
+
+		Bundle extras = getIntent().getExtras();
+		activityName=extras.getString("activity_name");
+
+
+		if(activityName.equals("Al-Hakim")){
+
+			setContentView(R.layout.alhakim_game);
+
+
+		}
+		else if(activityName.equals("Barquq")){
+
+			setContentView(R.layout.barqoq_game);
+
+
+		}
+		else if(activityName.equals("Qalawoun")){
+
+			setContentView(R.layout.qalwoun_game);
+
+
+		}
+		skip=(Button)findViewById(R.id.skipButton);
+		skip.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
+				Intent intent = new Intent(getApplicationContext(), WinGame.class);
+				intent.putExtra("activity_name",activityName);
+				startActivity(intent);
+
+
+			}
+		});
+
+		buttons=findButtons();
        
         for(int i=0;i<9;i++)
         {
@@ -44,10 +83,10 @@ public class Game extends Activity {
         fill_grid();
        
         
-       moveCounter = (TextView) findViewById(R.id.MoveCounter);
-	   feedbackText = (TextView) findViewById(R.id.FeedbackText);
+     //  moveCounter = (TextView) findViewById(R.id.MoveCounter);
+//	   feedbackText = (TextView) findViewById(R.id.FeedbackText);
 
-		moveCounter.setText("0");
+		//moveCounter.setText("0");
 //		feedbackText.setText(R.string.game_feedback_text);
 
 		for (int i = 1; i < 9; i++) {
@@ -134,10 +173,10 @@ public class Game extends Activity {
    		
    		if(bad_move==true)
    		{
-   			feedbackText.setText("Move Not Allowed");
+//   			feedbackText.setText("Move Not Allowed");
    			return;
    		}
-   		feedbackText.setText("Move OK");
+//   		feedbackText.setText("Move OK");
    		cells.remove(b_pos);
    		cells.add(b_pos, 0);
    		cells.remove(zuk_pos);
@@ -145,7 +184,7 @@ public class Game extends Activity {
    		
 	
     	fill_grid();
-		moveCounter.setText(Integer.toString(Integer.parseInt((String) moveCounter.getText()) + 1));
+		//moveCounter.setText(Integer.toString(Integer.parseInt((String) moveCounter.getText()) + 1));
 
 		 for(int i=0;i<9;i++)
 	        {

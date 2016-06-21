@@ -18,31 +18,31 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/alhakim1" />
+                android:src="@drawable/barqoq1" />
             <ImageView
                 android:id="@+id/bckgrndImageView7"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/alhakim2" />
+                android:src="@drawable/barqoq2" />
             <ImageView
                 android:id="@+id/bckgrndImageView6"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/alhakim3" />
+                android:src="@drawable/barqoq3" />
             <ImageView
                 android:id="@+id/bckgrndImageView5"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/alhakim4" />
+                android:src="@drawable/barqoq4" />
             <ImageView
                 android:id="@+id/bckgrndImageView4"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/alhakim5" />
+                android:src="@drawable/barqoq5" />
 
         </ViewFlipper>
     </LinearLayout>
