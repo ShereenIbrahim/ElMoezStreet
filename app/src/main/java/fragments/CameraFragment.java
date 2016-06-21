@@ -36,21 +36,21 @@ public class CameraFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        startCameraActivity=(Button)cameraView.findViewById(R.id.startCamera);
-        TextView info = (TextView) cameraView.findViewById(R.id.textView1);
-        info.setText("We will show you our history.Click the button and focus the camera, you will see everything ^_^");
+        //startCameraActivity=(Button)cameraView.findViewById(R.id.startCamera);
+        //TextView info = (TextView) cameraView.findViewById(R.id.textView1);
+        //info.setText("We will show you our history.Click the button and focus the camera, you will see everything ^_^");
 
         //when click on startCameraActivity button will open gps activity
-        startCameraActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(getActivity(), ImageTargets.class);
-                startActivity(intent);
-
-
-            }
-        });
+//        startCameraActivity.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Intent intent = new Intent(getActivity(), ImageTargets.class);
+//                startActivity(intent);
+//
+//
+//            }
+//        });
     }
 
 
