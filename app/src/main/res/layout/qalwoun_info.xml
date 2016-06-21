@@ -15,32 +15,32 @@
             android:layout_height="fill_parent">
             <ImageView
                 android:id="@+id/bckgrndImageView8"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/qalwoun1" />
+                android:src="@mipmap/qalwoun1" />
             <ImageView
                 android:id="@+id/bckgrndImageView7"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/qalwoun2" />
+                android:src="@mipmap/qalwoun2" />
             <ImageView
                 android:id="@+id/bckgrndImageView6"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/qalwoun3" />
+                android:src="@mipmap/qalwoun3" />
             <ImageView
                 android:id="@+id/bckgrndImageView5"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/qalwoun4" />
+                android:src="@mipmap/qalwoun4" />
             <ImageView
                 android:id="@+id/bckgrndImageView4"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/qalwoun5" />
 
