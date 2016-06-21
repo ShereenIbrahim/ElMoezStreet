@@ -63,7 +63,7 @@ import model.gps.activity.AugmentedReality;
  */
 public class GPSActivity extends AugmentedReality {
 	
-    private static final String TAG = "Demo";
+    private static final String TAG = "GPSActivity";
     private static final String locale = Locale.getDefault().getLanguage();
     private static final BlockingQueue<Runnable> queue = new ArrayBlockingQueue<Runnable>(1);
     private static final ThreadPoolExecutor exeService = new ThreadPoolExecutor(1, 1, 20, TimeUnit.SECONDS, queue);
@@ -128,7 +128,7 @@ public class GPSActivity extends AugmentedReality {
 //        to set name inside it
 //        placeInfo = (TextView) dialog.findViewById(R.id.placeInfo);
         /////////
-//        builder = new AlertDialog.Builder(Demo.this);//for alert the user to enable gps and internet connection
+//        builder = new AlertDialog.Builder(GPSActivity.this);//for alert the user to enable gps and internet connection
 ////        builder.setMessage("Please Check Your Connection.");
 //        builder.setMessage("Please Enable GPS and Internet Connection.....")
 //                .setTitle("Please Check Your Connection.");
