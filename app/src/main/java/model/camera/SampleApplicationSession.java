@@ -120,7 +120,7 @@ public class SampleApplicationSession  implements Vuforia.UpdateCallbackInterfac
         // mVuforiaFlags = Vuforia.GL_20;
 
         // Initialize Vuforia SDK asynchronously to avoid blocking the
-        // main (UI) thread.
+        // game_play_activity (UI) thread.
         //
         // NOTE: This task instance must be created and invoked on the
         // UI thread and it can be executed only once!
