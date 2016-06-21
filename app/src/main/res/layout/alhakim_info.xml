@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.toyo.slideshowwallpaper.MainActivity">
+    tools:context="com.app.toyo.slideshowwallpaper.MainActivity"
+    android:background="#002921">
     <LinearLayout
         android:id="@+id/slider"
         android:layout_width="wrap_content"

@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.toyo.slideshowwallpaper.MainActivity">
+    tools:context="com.app.toyo.slideshowwallpaper.MainActivity"
+    android:background="#002921">
     <LinearLayout
         android:id="@+id/slider"
         android:layout_width="wrap_content"
@@ -17,31 +18,31 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/aqmar1" />
+                android:src="@drawable/qalwoun1" />
             <ImageView
                 android:id="@+id/bckgrndImageView7"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/aqmar2" />
+                android:src="@drawable/qalwoun2" />
             <ImageView
                 android:id="@+id/bckgrndImageView6"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/aqmar3" />
+                android:src="@drawable/qalwoun3" />
             <ImageView
                 android:id="@+id/bckgrndImageView5"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/aqmar4" />
+                android:src="@drawable/qalwoun4" />
             <ImageView
                 android:id="@+id/bckgrndImageView4"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/aqmar5" />
+                android:src="@drawable/qalwoun5" />
 
         </ViewFlipper>
     </LinearLayout>

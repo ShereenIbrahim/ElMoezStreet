@@ -60,7 +60,7 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_menu_camera"
+                android:background="@drawable/ic_menu_photo_camera"
                 android:id="@+id/imagePost"
                 android:layout_gravity="center"/>
             <TextView
