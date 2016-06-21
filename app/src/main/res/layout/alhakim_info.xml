@@ -21,28 +21,28 @@
                 android:src="@drawable/alhakim1" />
             <ImageView
                 android:id="@+id/bckgrndImageView7"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/alhakim2" />
+                android:src="@mipmap/alhakim2" />
             <ImageView
                 android:id="@+id/bckgrndImageView6"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/alhakim3" />
+                android:src="@mipmap/alhakim3" />
             <ImageView
                 android:id="@+id/bckgrndImageView5"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/alhakim4" />
+                android:src="@mipmap/alhakim4" />
             <ImageView
                 android:id="@+id/bckgrndImageView4"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/alhakim5" />
+                android:src="@mipmap/alhakim5" />
 
         </ViewFlipper>
     </LinearLayout>

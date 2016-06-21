@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="500px"
         android:id="@+id/TitleImage"
-        android:background="@drawable/alhakim_p"
+        android:background="@mipmap/alhakim_p"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24px">
     </ImageView>
