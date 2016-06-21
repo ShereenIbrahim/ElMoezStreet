@@ -3,9 +3,14 @@ package sessionManagement;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
+
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.NetworkImageView;
 
 import java.util.HashMap;
 
+import http_utilities.AppController;
 import model.userData.Login;
 
 /**
@@ -35,6 +40,9 @@ public class SessionManager {
 
     // Email address (make variable public to access from outside)
     public static final String KEY_EMAIL = "email";
+    // Email address (make variable public to access from outside)
+    public static final String KEY_Image = "userImage";
+
 
     // Constructor
     public SessionManager(Context context){
@@ -46,7 +54,8 @@ public class SessionManager {
     /**
      * Create login session
      * */
-    public void createLoginSession(String name, String email){
+    public void createLoginSession(String name, String email,String userImage){
+        Log.e("++++++++++++",userImage);
         // Storing login value as TRUE
         editor.putBoolean(IS_LOGIN, true);
 
@@ -55,6 +64,9 @@ public class SessionManager {
 
         // Storing email in pref
         editor.putString(KEY_EMAIL, email);
+
+        // Storing email in pref
+        editor.putString(KEY_Image,userImage);
 
         // commit changes
         editor.commit();
@@ -70,6 +82,8 @@ public class SessionManager {
 
         // user email id
         user.put(KEY_EMAIL, pref.getString(KEY_EMAIL, null));
+        // user image id
+        user.put(KEY_Image, pref.getString(KEY_Image, null));
 
         // return user
         return user;
@@ -123,5 +137,7 @@ public class SessionManager {
     public boolean isLoggedIn(){
         return pref.getBoolean(IS_LOGIN, false);
     }
+
+
 
 }
