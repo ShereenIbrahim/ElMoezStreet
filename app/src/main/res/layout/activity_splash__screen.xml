@@ -7,23 +7,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#ceb19c"
+    android:background="@drawable/moezsplash"
+
     tools:context="com.example.sh.elmoezstreet.Splash_ScreenActivity">
-
-    <!--<ImageView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:src="@drawable/title"-->
-        <!--android:id="@+id/title"/>-->
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/guide"
-
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

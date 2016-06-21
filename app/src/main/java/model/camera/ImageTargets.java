@@ -36,6 +36,8 @@ import com.vuforia.Vuforia;
 
 import java.util.ArrayList;
 
+import model.stories.Stories;
+
 /**
  * Created by Christena on 5/13/2016.
  */
@@ -186,12 +188,7 @@ public class ImageTargets extends Activity implements SampleApplicationControl, 
                     if(!entered) {
                         entered = true;
                         android.app.FragmentManager in = getFragmentManager();
-                        ShowInformationFragment showInfo = new ShowInformationFragment("qrkbbbbbbbbbbbblllleeeeeeeeeeeeeeeeeeeeeeewfbikrfbkiiii" +
-                                "kn    kbnkjjjjjjjjjjjjjjjj" +
-                                "knkbvk    " +
-                                " jbjkbkjbjkbfe" +
-                                "nkbfskebkjef" +
-                                "nkkih");
+                        ShowInformationFragment showInfo = new ShowInformationFragment(Stories.AL_HAKIM);
                         showInfo.show(in, "info");
 //                        viewT("thesecond one and thanls god image is displayed");
 

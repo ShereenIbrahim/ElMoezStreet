@@ -17,6 +17,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!-- new permissions -->
+    <!-- feed permission-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- end feed permission-->
 
 
     <!-- <permission -->
@@ -30,10 +33,12 @@
     <!-- end new permissions -->
     <application
         android:allowBackup="true"
-        android:icon="@drawable/splash"
+        android:icon="@drawable/applogo"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:largeHeap="true"
+        android:theme="@style/AppTheme"
+        android:name="android.support.multidex.MultiDexApplication">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -52,12 +57,6 @@
             android:name="model.camera.ImageTargets"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
-<<<<<<< HEAD
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
-
-        <activity android:name=".GPSActivity" android:screenOrientation="landscape" />
-=======
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".GPSActivity"
@@ -66,7 +65,9 @@
             android:name="model.puzzlegame.GameActivity"
             android:label="@string/app_name"></activity>
         <activity android:name="model.puzzlegame.Game" />
->>>>>>> a4db5363c0e598b1d19d65905e46c37f8114baae
+        <activity android:name="model.userData.Login" android:theme="@style/AppTheme.Dark" >
+        </activity>
+        <activity android:name="model.userData.Signup" android:theme="@style/AppTheme.Dark" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

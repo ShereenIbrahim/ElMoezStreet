@@ -131,7 +131,6 @@ public class Login extends AppCompatActivity {
         _loginButton.setEnabled(true);
         Toast.makeText(getBaseContext(), msg, Toast.LENGTH_LONG).show();
 
-//        finish();
     }
 
     public void onLoginFailed(String msg) {
@@ -174,11 +173,12 @@ public class Login extends AppCompatActivity {
                         try {
                             if(response.getString("state").equals("register Successfully")){
                                 progressDialog.dismiss();
-                                onLoginSuccess(response.getString("state"));
+
                                 // Creating user login session
                                 // For testing i am stroing name, email as follow
                                 // Use user real data
                                 session.createLoginSession(response.getString("userName"),email);
+                                onLoginSuccess(response.getString("state"));
 
 
                             }else {
