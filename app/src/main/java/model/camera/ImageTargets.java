@@ -80,8 +80,9 @@ public class ImageTargets extends Activity implements SampleApplicationControl, 
         vuforiaAppSession = new SampleApplicationSession(this);
         startLoadingAnimation();
 
+        mDatasetStrings.add("elmoez.xml");
 
-        mDatasetStrings.add("stone.xml");
+//        mDatasetStrings.add("stone.xml");
 
 
         vuforiaAppSession.initAR(this, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -154,43 +155,24 @@ public class ImageTargets extends Activity implements SampleApplicationControl, 
                 else{
 
 
-                    if(text.equals("5_1")||text.equals("5_2")||text.equals("5_3")||text.equals("5_4")||text.equals("5_5"))
-                    {
-                        viewT("cafeteria");
-                    }
-                    else if (text.equals("3_1")||text.equals("3_2")||text.equals("3_3")||text.equals("3_4")||text.equals("3_5"))
-                    {
-                        viewT("out side ITI");
-                    } else if(text.equals("3")||text.equals("4")||text.equals("4_1")||text.equals("4_2")||text.equals("4_3")||text.equals("4_4")||text.equals("4_5")||text.equals("4_6")||text.equals("4_7")||text.equals("4_8")||text.equals("4_9")||text.equals("4_10"))
-                    {
-                        viewT("corridor");
-                    }
-
-                    else  if (text.equals("SAMM")||text.equals("SAM_2903"))
-                    {
-                        viewT("the first image is displayed");
-                    }
-
-                    else if(text.equals("SAM")||text.equals("SAM_2921"))
+                 if(text.equals("mazanaaa")||text.equals("mazana"))
                     {
                         if(!entered) {
                             entered = true;
                         android.app.FragmentManager in = getFragmentManager();
-                        ShowInformationFragment astrolabe = new ShowInformationFragment("thesecond one and thanls god image is displayed");
+                        ShowInformationFragment astrolabe = new ShowInformationFragment("The most spectacular feature of the mosque are the minarets on either side of the facade, reminiscent of the propylon to a pharaonic temple, originally the two minarets stood independent of the brick walls at the corners. these are the earliest surviving minarets in the city and they have been restored at various times during their history, the massive salients were added in 1010 to strengthen their structure, and the northern minaret was incorporated into the city wall. Inside, these strange structures are hollow, for they have been built around the original minarets, which are connected with brackets and can still be seen from the minaret above.");
                         astrolabe.show(in, "info");
-//                        viewT("thesecond one and thanls god image is displayed");
                     }
 
                     }
 
-                else if (text.equals("qrcode"))
+                else if (text.equals("alhakim")||text.equals("hakim"))
                 {
                     if(!entered) {
                         entered = true;
                         android.app.FragmentManager in = getFragmentManager();
-                        ShowInformationFragment showInfo = new ShowInformationFragment(Stories.AL_HAKIM);
+                        ShowInformationFragment showInfo = new ShowInformationFragment("The mosque was built by Al-Hakim who was one of the most controversial figures of the history of Egypt. It is large a hypostyle mosque with open courtyard surrounded with arcaded bays.");
                         showInfo.show(in, "info");
-//                        viewT("thesecond one and thanls god image is displayed");
 
 
                     }

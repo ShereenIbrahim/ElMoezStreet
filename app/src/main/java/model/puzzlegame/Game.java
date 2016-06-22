@@ -18,7 +18,6 @@ import java.util.Collections;
 @SuppressWarnings("deprecation")
 public class Game extends Activity {
 
-
 	int first=50;
 	String activityName="";
 	int second=255;
@@ -195,6 +194,8 @@ public class Game extends Activity {
 	        }
 
 		Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+		intent.putExtra("activity_name",activityName);
+
 		startActivity(intent);
 //		 feedbackText.setText("we have a winner");
 

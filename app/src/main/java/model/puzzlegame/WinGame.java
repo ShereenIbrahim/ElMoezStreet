@@ -27,20 +27,35 @@ String activityName="";
         if(activityName.equals("Al-Hakim")){
 
             setContentView(R.layout.alhakim_info);
-
+            TextView storyText=(TextView)findViewById(R.id.storyText);
+            storyText.setText("\n" +
+                    "990-1013 AD\\ 380-403 AH\n"+
+                    "Fatimid\n" +
+                    "\n" +
+                            "The mosque was built by al-Hakim who was one of the most controversial figures of the history of Egypt. It is large a hypostyle mosque with open courtyard surrounded with arcaded bays.");
 
         }
         else if(activityName.equals("Barquq")){
 
             setContentView(R.layout.barqoq_info);
-
+            TextView storyText=(TextView)findViewById(R.id.storyText);
+            storyText.setText("\n" +
+                    "1384-1386 AD\\ 786-788 AH\n" +
+                    "Circassian Mamluk\n" +
+                    "\n" +
+                    "The founder Sultan al-Zahir Barquq was the first Circassian Mamluk Sultan, but the complex follows the style of the earlier Bahri Mamluks and clearly imitates Madrasa of Sultan Hasan.\n");
 
         }
         else if(activityName.equals("Qalawoun")){
 
             setContentView(R.layout.qalwoun_info);
 
-
+            TextView storyText=(TextView)findViewById(R.id.storyText);
+            storyText.setText("\n" +
+                    "1284-85 AD\\ 683-684 AH\n" +
+                    "Bahri Mamluk\n" +
+                    "\n" +
+                    "This massive complex was built by Sultan al-Mansur Qalawun. It included a maristan (hospital), the first to be built in Cairo and the most lavish and impressive of its time. \n");
         }
 
 
@@ -58,7 +73,6 @@ String activityName="";
         viewFlipper.startFlipping();
 
 
-        TextView storyText=(TextView)findViewById(R.id.storyText);
-        storyText.setText(Stories.AL_HAKIM);
+
     }
 }

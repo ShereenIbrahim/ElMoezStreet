@@ -16,6 +16,7 @@ public interface HttpHandler {
     public static final String UPLOAD_URL="http://192.168.43.197:8084/ElmoezWebService/services/elmoez/uploadFeedComponentWithImage";
     public static final String UPLOAD_URL_WITHOUT_IMAGE="http://192.168.43.197:8084/ElmoezWebService/services/elmoez/uploadFeedComponentWithoutImage";
     public static final String userImagesUrl="http://192.168.43.197:8084/ElmoezWebService/images/";
+    public static final String getData_URL="http://192.168.43.197:8084/ElmoezWebService/services/elmoez/getData/";
     public static final int CAPTURE_IMAGE = 208;
     public static final int PICK_IMAGE = 209;
 

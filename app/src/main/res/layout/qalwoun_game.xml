@@ -31,7 +31,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/skipButton"
         android:text="skip"
-        android:layout_below="@+id/GameField"/>
+        android:layout_below="@+id/GameField"
+        android:layout_centerInParent="true"
+
+        />
 
 
 </RelativeLayout>
