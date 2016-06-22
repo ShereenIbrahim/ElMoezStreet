@@ -16,6 +16,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.sh.elmoezstreet.MainActivity;
 import com.example.sh.elmoezstreet.R;
 
 import org.json.JSONException;
@@ -130,6 +131,12 @@ public class Login extends AppCompatActivity {
     public void onLoginSuccess(String msg) {
         _loginButton.setEnabled(true);
         Toast.makeText(getBaseContext(), msg, Toast.LENGTH_LONG).show();
+//        call home fragment
+       Intent intent=new Intent(getApplicationContext(), MainActivity.class);
+
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+        startActivity(intent);
 
     }
 
@@ -166,7 +173,7 @@ public class Login extends AppCompatActivity {
 
     public void authenticateUser(String userMail,String pass){
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.GET, HttpHandler.LOGIN_URL+"/"+userMail+"/"+pass, null, new Response.Listener<JSONObject>() {
+                (Request.Method.GET, HttpHandler.LOGIN_URL + "/"+userMail+"/"+pass, null, new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
@@ -177,7 +184,7 @@ public class Login extends AppCompatActivity {
                                 // Creating user login session
                                 // For testing i am stroing name, email as follow
                                 // Use user real data
-                                session.createLoginSession(response.getString("userName"),email);
+                                session.createLoginSession(response.getString("userName"),email,response.getString("userImage"));
                                 onLoginSuccess(response.getString("state"));
 
 

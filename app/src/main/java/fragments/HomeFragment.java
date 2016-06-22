@@ -31,8 +31,10 @@ import com.android.volley.Cache;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.NetworkImageView;
 import com.example.sh.elmoezstreet.R;
 import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
@@ -91,7 +93,11 @@ public class HomeFragment  extends Fragment {
     private DateFormat df ;
     private String date ;
 //    session for the user
-    SessionManager userSession;
+    private SessionManager userSession;
+    HashMap<String, String> user;
+    ImageLoader mImageLoader;
+    NetworkImageView mNetworkImageView;
+
 
     @Nullable
     @Override
@@ -105,6 +111,11 @@ public class HomeFragment  extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         userSession=new SessionManager(getContext());
+        user=userSession.getUserDetails();
+        // Get the ImageLoader through your singleton class.
+        mImageLoader = AppController.getInstance(getActivity()).getImageLoader();
+        // Get the NetworkImageView that will display the image.
+        mNetworkImageView = (NetworkImageView) homeView.findViewById(R.id.userImage);
         listView = (ListView) homeView.findViewById(R.id.list);
         feedMsg = (EditText) homeView.findViewById(R.id.writeFeed);
         postFeed = (ImageButton) homeView.findViewById(R.id.post);
@@ -165,16 +176,27 @@ public class HomeFragment  extends Fragment {
             getGsonArray();
 
         }
+        if (user.get("userImage")!=null){//if user already logged in
+            getUserImage();
+
+        }else{
+            mNetworkImageView.setDefaultImageResId(R.drawable.user);
+
+        }
 
         postFeed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(userSession.isLoggedIn()){//check if the user login
+
                     String feed = feedMsg.getText().toString();
+//                    user=userSession.getUserDetails();
+                    //get user image
+//                    getUserImage();
                     if(!feed.equals("")||bitmap!=null) {
                         final Feeds newFeed = new Feeds();
-                        newFeed.setUserName("ayad");
-                        newFeed.setUserImage(userImage);
+                        newFeed.setUserName(user.get("name"));
+                        newFeed.setUserImage(user.get("userImage"));
                         date = df.format(Calendar.getInstance().getTime());
                         newFeed.setFeedTime(date);
                         if(!feed.equals("")&&bitmap==null){
@@ -229,7 +251,7 @@ public class HomeFragment  extends Fragment {
 
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()){
+                        switch (item.getItemId()) {
 
                             case R.id.Camera:
                                 openCamera();
@@ -284,13 +306,14 @@ public class HomeFragment  extends Fragment {
         cancelPostImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bitmap=null;
+                bitmap = null;
                 dialog.dismiss();
-                Toast.makeText(getActivity(),"cancel image",Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "cancel image", Toast.LENGTH_LONG).show();
 
 
             }
         });
+
     }
 
 
@@ -371,7 +394,7 @@ public class HomeFragment  extends Fragment {
 
     private void openCamera() {
         Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(cameraIntent,HttpHandler.CAPTURE_IMAGE);
+        startActivityForResult(cameraIntent, HttpHandler.CAPTURE_IMAGE);
 
     }
 
@@ -405,7 +428,7 @@ public class HomeFragment  extends Fragment {
                         bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
 
 //						reduce size of image
-                        bitmap = getResizedBitmap(bitmap,500,500);
+                        bitmap = getResizedBitmap(bitmap,450,450);
 
                         //Setting the Bitmap to ImageView
                         postImageView.setImageBitmap(bitmap);
@@ -484,10 +507,10 @@ public class HomeFragment  extends Fragment {
             loading.show();
             Ion.with(getActivity())
                     .load(HttpHandler.UPLOAD_URL).setLogging("UPLOAD LOGS", Log.DEBUG)
-                    .setMultipartParameter("email", "c.ayad-2010@yahoo.com")
+                    .setMultipartParameter("email", user.get("email"))
                     .setMultipartParameter("likeFeed","0")
                     .setMultipartParameter("feedTime",date)
-                    .setMultipartParameter("feed",feedMsg.getText().toString())
+                    .setMultipartParameter("feed", feedMsg.getText().toString())
                     .setMultipartFile("file", "application/zip", new File(path)).asJsonObject().setCallback(new FutureCallback<JsonObject>() {
                 @Override
                 public void onCompleted(Exception e, JsonObject result) {
@@ -531,7 +554,7 @@ public class HomeFragment  extends Fragment {
 //        DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
 //        String date = df.format(Calendar.getInstance().getTime());
 
-        userFeedWithoutImage.put("email", "c.ayad-2010@yahoo.com");
+        userFeedWithoutImage.put("email", user.get("email"));
         userFeedWithoutImage.put("likeFeed", "0");
         userFeedWithoutImage.put("feedTime", date);
         userFeedWithoutImage.put("feed", feedMsg.getText().toString());
@@ -575,4 +598,15 @@ public class HomeFragment  extends Fragment {
 //        jsObjRequest.setTag(TAG);
         AppController.getInstance(getActivity()).addToRequestQueue(jsObjRequest);
     }
+
+//    get user image
+public void getUserImage(){
+
+// Set the URL of the image that should be loaded into this view, and
+    Log.e("++++++++++++",user.get("userImage"));
+// specify the ImageLoader that will be used to make the request.
+    mNetworkImageView.setImageUrl(HttpHandler.userImagesUrl+user.get("userImage"), mImageLoader);
+
+
+}
 }

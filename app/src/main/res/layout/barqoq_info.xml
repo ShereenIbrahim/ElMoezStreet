@@ -15,32 +15,32 @@
             android:layout_height="fill_parent">
             <ImageView
                 android:id="@+id/bckgrndImageView8"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/barqoq1" />
+                android:src="@mipmap/barqoq1" />
             <ImageView
                 android:id="@+id/bckgrndImageView7"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/barqoq2" />
+                android:src="@mipmap/barqoq2" />
             <ImageView
                 android:id="@+id/bckgrndImageView6"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/barqoq3" />
+                android:src="@mipmap/barqoq3" />
             <ImageView
                 android:id="@+id/bckgrndImageView5"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/barqoq4" />
+                android:src="@mipmap/barqoq4" />
             <ImageView
                 android:id="@+id/bckgrndImageView4"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/barqoq5" />
 
