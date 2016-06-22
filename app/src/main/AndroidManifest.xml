@@ -70,6 +70,7 @@
         <activity android:name="model.userData.Login" android:theme="@style/AppTheme.Dark" >
         </activity>
         <activity android:name="model.userData.Signup" android:theme="@style/AppTheme.Dark" />
+        <activity android:name="model.userData.UserNameEdit" android:theme="@style/AppTheme.Dark" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

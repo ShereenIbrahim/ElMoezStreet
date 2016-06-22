@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
+import com.example.sh.elmoezstreet.MainActivity;
 
 import java.util.HashMap;
 
@@ -94,7 +95,7 @@ public class SessionManager {
      * If false it will redirect user to login page
      * Else won't do anything
      * */
-    public void checkLogin(){
+    public  void checkLogin(){
         // Check login status
         if(!this.isLoggedIn()){
             // user is not logged in redirect him to Login Activity
@@ -120,15 +121,15 @@ public class SessionManager {
         editor.commit();
 
         // After logout redirect user to Loing Activity
-        Intent i = new Intent(_context, Login.class);
-        // Closing all the Activities
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-        // Add new Flag to start new Activity
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-        // Staring Login Activity
-        _context.startActivity(i);
+//        Intent i = new Intent(_context, MainActivity.class);
+//        // Closing all the Activities
+//        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//
+//        // Add new Flag to start new Activity
+//        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//
+//        // Staring Login Activity
+//        _context.startActivity(i);
     }
     /**
      * Quick check for login

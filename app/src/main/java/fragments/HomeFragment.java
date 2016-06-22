@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Matrix;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -29,6 +30,7 @@ import android.widget.Toast;
 
 import com.android.volley.Cache;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
@@ -97,6 +99,7 @@ public class HomeFragment  extends Fragment {
     HashMap<String, String> user;
     ImageLoader mImageLoader;
     NetworkImageView mNetworkImageView;
+    private static final String TAG = "Home";
 
 
     @Nullable
@@ -110,6 +113,7 @@ public class HomeFragment  extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        Log.e("========","home");
         userSession=new SessionManager(getContext());
         user=userSession.getUserDetails();
         // Get the ImageLoader through your singleton class.
@@ -139,7 +143,7 @@ public class HomeFragment  extends Fragment {
         loading =  new ProgressDialog(getActivity(),
                 R.style.AppTheme_Dark_Dialog);
         loading.setIndeterminate(true);
-        loading.setMessage("posting...");
+        loading.setMessage("Loading...");
         feedItems = new ArrayList<>();
 
         imagePost = (ImageButton) homeView.findViewById(R.id.imagePost);
@@ -504,6 +508,7 @@ public class HomeFragment  extends Fragment {
 
 
 //            final ProgressDialog loading = ProgressDialog.show(this, "Uploading...", "Please wait...", false, false);
+            loading.setMessage("posting...");
             loading.show();
             Ion.with(getActivity())
                     .load(HttpHandler.UPLOAD_URL).setLogging("UPLOAD LOGS", Log.DEBUG)
@@ -562,7 +567,7 @@ public class HomeFragment  extends Fragment {
 
 
 
-
+        loading.setMessage("posting...");
         loading.show();
 
 
@@ -595,7 +600,7 @@ public class HomeFragment  extends Fragment {
                     }
                 });
 
-//        jsObjRequest.setTag(TAG);
+        jsObjRequest.setTag(TAG);
         AppController.getInstance(getActivity()).addToRequestQueue(jsObjRequest);
     }
 
@@ -603,10 +608,29 @@ public class HomeFragment  extends Fragment {
 public void getUserImage(){
 
 // Set the URL of the image that should be loaded into this view, and
-    Log.e("++++++++++++",user.get("userImage"));
+    Log.e("++++++++++++", user.get("userImage"));
 // specify the ImageLoader that will be used to make the request.
-    mNetworkImageView.setImageUrl(HttpHandler.userImagesUrl+user.get("userImage"), mImageLoader);
+    mNetworkImageView.setImageUrl(HttpHandler.userImagesUrl + user.get("userImage"), mImageLoader);
+//    Bitmap bitmap = ((BitmapDrawable) mNetworkImageView.getDrawable()).getBitmap();
+
+
+
+
+
+
 
 
 }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+//        AppController.getInstance(getContext()).getRequestQueue().cancelAll(new RequestQueue.RequestFilter() {
+//            @Override
+//            public boolean apply(Request<?> request) {
+//                Log.d("DEBUG", "request running: " + request.getTag().toString());
+//                return true;
+//            }
+//        });
+    }
 }
